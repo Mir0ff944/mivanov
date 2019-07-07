@@ -1,0 +1,2 @@
+- init personal website
+- single-page React app for exersice and practice
