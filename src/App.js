@@ -1,53 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Suspense, lazy} from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          {/* <li>
-            <Link to="/work">About</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">Topics</Link>
-          </li> */}
-        </ul>
+// Component imports
+const Home = lazy(() => import('./components/Home'));
+const Resume = lazy(() => import('./components/Resume'));
 
-        <hr />
+export default class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <ul>
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/resume">Resume</NavLink></li>
+          </ul>
 
-        {/* <Route exact path="/" component={Home} />
-        <Route path="/work" component={myWork} />
-        <Route path="/portfolio" component={Portfolio} /> */}
-      </div>
-    </Router>
-  );
+          <hr />
+          <Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Route exact path="/" component={Home} />
+              <Route path="/resume" component={Resume} />
+            </Suspense>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-export default App;
