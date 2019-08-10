@@ -1,15 +1,16 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import './styles/bootstrap.scss';
 import './styles/bootstrap-grid.scss';
 import './styles/App.scss';
+import './styles/Navigation.scss';
 
-// Component imports
-const Navigation = lazy(() => import('./components/Navigation'));
+// Main layout
+import Navigation from './components/Navigation';
 
 export default class App extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         {/* Base Layout */}
         <Navigation />
       </div>
