@@ -10,15 +10,14 @@ export default class Naigation extends React.Component {
 
   render() {
     return(
-      <div className="row">
-        <div className="navbar-wrapper col-sm-3">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/resume">Resume</Link></li>
+      <div className="container">
+        <div className="navbar__wrapper">
+          <ul className="navbar__list">
+            <li className="navbar__list-item"><Link to="/">Home</Link></li>
+            <li className="navbar__list-item"><Link to="/resume">Resume</Link></li>
           </ul>
         </div>
-
-        <div className="col offset-sm-3">
+        <div className="col page_content">
           <Suspense fallback={<div>Loading...</div>}>
             <Router>
               <NotFound default />
