@@ -10,14 +10,14 @@ export default class Naigation extends React.Component {
 
   render() {
     return(
-      <div className="container">
+      <div>
         <div className="navbar__wrapper">
           <ul className="navbar__list">
             <li className="navbar__list-item"><Link to="/">Home</Link></li>
             <li className="navbar__list-item"><Link to="/resume">Resume</Link></li>
           </ul>
         </div>
-        <div className="col page_content">
+        <div className="main-content container">
           <Suspense fallback={<div>Loading...</div>}>
             <Router>
               <NotFound default />
