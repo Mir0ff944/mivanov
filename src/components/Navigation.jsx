@@ -1,5 +1,6 @@
 import React, { Suspense, lazy} from 'react';
 import { Router, Link } from "@reach/router";
+import Social from './sidenav/Social';
 
 // Component imports
 const Home = lazy(() => import('./Home'));
@@ -16,6 +17,7 @@ export default class Naigation extends React.Component {
             <li className="navbar__list-item"><Link to="/">Home</Link></li>
             <li className="navbar__list-item"><Link to="/resume">Resume</Link></li>
           </ul>
+          <Social />
         </div>
         <div className="main-content container">
           <Suspense fallback={<div>Loading...</div>}>
