@@ -4,8 +4,12 @@ export default class Social extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>Homepage</h2>
+      <div className="container socia-sharing__wrapper">
+        <div className="row">
+          <div className="col">GitHub</div>
+          <div className="col">FB</div>
+          <div className="col">LnkdIn</div>
+        </div>
       </div>
     )
   }

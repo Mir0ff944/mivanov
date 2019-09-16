@@ -2,11 +2,10 @@ import React, { Suspense, lazy} from 'react';
 import { Router, Link } from "@reach/router";
 import Social from './sidenav/Social';
 import posed from 'react-pose';
+import Home from './Home';
 
-// Component imports
-const Home = lazy(() => import('./Home'));
+// Lazy component imports
 const Resume = lazy(() => import('./Resume'));
-const NotFound = () => <p>Sorry, nothing here</p>
 
 // Pose sidebar items
 const Sidebar = posed.ul({
@@ -16,7 +15,7 @@ const Sidebar = posed.ul({
 
 const Children = posed.li({
   open: { y: 0, opacity: 1 },
-  closed: { y: 20, opacity: 1 }
+  closed: { y: 20, opacity: 0 }
 })
 
 export default class Naigation extends React.Component {
@@ -35,18 +34,16 @@ export default class Naigation extends React.Component {
       <div>
         <div className="navbar__wrapper">
           <Sidebar className="navbar__list" pose={isOpen ? 'open' : 'closed' }>
-            <Children className="navbar__list-item"><Link to="/">Home</Link></Children>
-            <Children className="navbar__list-item"><Link to="/resume">Resume</Link></Children>
+            <Children className="navbar__list-item">Home</Children>
+            <Children className="navbar__list-item">Resume</Children>
           </Sidebar>
-          <Social />
         </div>
-        <div className="main-content container">
+        <div className="main-content">
           <Suspense fallback={<div>Loading...</div>}>
-            <Router>
-              <NotFound default />
-              <Home path="/" />
-              <Resume path="/resume" />
-            </Router>
+            <div>
+              <Home />
+              <Resume />
+            </div>
           </Suspense>
         </div>
       </div>

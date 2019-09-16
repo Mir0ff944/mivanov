@@ -1,9 +1,10 @@
 import React from 'react';
 import './styles/bootstrap.scss';
-import './styles/bootstrap-grid.scss';
+// import './styles/bootstrap-grid.scss';
 import './styles/Settings.scss';
 import './styles/App.scss';
 import './styles/Navigation.scss';
+import './styles/Home.scss';
 
 // Main layout
 import Navigation from './components/Navigation';
