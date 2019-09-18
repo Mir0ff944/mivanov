@@ -1,6 +1,10 @@
 .full-name {
-  text-align: center;
-  color: aquamarine;  
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: 0 auto;
+  color: aquamarine;
+  background-color: azure;
 }
 
 .landing-content {

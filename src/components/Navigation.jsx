@@ -35,7 +35,9 @@ export default class Naigation extends React.Component {
         <div className="navbar__wrapper">
           <Sidebar className="navbar__list" pose={isOpen ? 'open' : 'closed' }>
             <Children className="navbar__list-item">Home</Children>
-            <Children className="navbar__list-item">Resume</Children>
+            <Children className="navbar__list-item">About myself</Children>
+            <Children className="navbar__list-item">Experience</Children>
+            <Children className="navbar__list-item">Portfolio</Children>
           </Sidebar>
         </div>
         <div className="main-content">
