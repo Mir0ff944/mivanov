@@ -6,12 +6,14 @@ const Logo = posed.div({
     x: 0,
     y: 0,
     opacity: 1,
-    transition: { opacity: { ease: 'easeIn', duration: 1500}, }
+    transition: { opacity: { ease: 'easeInOut', duration: 2000 }, duration: 2000}
   },
   closed: {
-    x: -10,
-    y: -10,
-    opacity: 0
+    x: -40,
+    y: -20,
+    opacity: 0,
+    transition: {
+      opacity: { ease: 'easeInOut', duration: 2000 }, duration: 2000}
   }
 })
 
@@ -23,6 +25,10 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     setTimeout(this.toggleLogo, 1000)
+    setTimeout(this.toggleLogo, 3500)
+    // setInterval(() => {
+    //   this.toggleLogo()
+    // }, 2000);
   }
 
   render() {
@@ -31,9 +37,8 @@ export default class Home extends React.Component {
     return(
       <div className="row landing-content--wrapper">
         <div className="col-md-12 landing-content">
-          <Logo className="full-name" pose={isVisible ? 'open' : 'closed'} >
-            <p>Miroslav</p>
-            <p>Ivanov</p>
+          <Logo className="logo-wrapper" pose={isVisible ? 'open' : 'closed'} >
+            <img src="placeholder.png" alt="placeholder" class="home-logo-image" />
           </Logo>
         </div>
       </div>
