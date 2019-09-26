@@ -1,22 +1,26 @@
 import React, { Suspense, lazy} from 'react';
-import { Router, Link } from "@reach/router";
-import Social from './sidenav/Social';
 import posed from 'react-pose';
 import Home from './Home';
 
 // Lazy component imports
 const Resume = lazy(() => import('./Resume'));
+// end of lazy component imports
 
 // Pose sidebar items
 const Sidebar = posed.ul({
-  open: { x: '0%', delayDchildren: 200, staggerChildren: 100 },
+  open: {
+    x: '0%',
+    delayDchildren: 400,
+    staggerChildren: 150
+  },
   closed: { x: '-110%', delay: 300 }
 })
 
 const Children = posed.li({
-  open: { y: 0, opacity: 1 },
+  open: { y: 0, opacity: 1, },
   closed: { y: 20, opacity: 0 }
 })
+// end of Pose items
 
 export default class Naigation extends React.Component {
   state = { isOpen: false}
@@ -24,7 +28,7 @@ export default class Naigation extends React.Component {
   toggleNav = () => this.setState({isOpen: !this.state.isOpen});
 
   componentDidMount() {
-    setTimeout(this.toggleNav, 1000)
+    setTimeout(this.toggleNav, 2000)
   }
 
   render() {
@@ -35,7 +39,7 @@ export default class Naigation extends React.Component {
         <div className="navbar__wrapper">
           <Sidebar className="navbar__list" pose={isOpen ? 'open' : 'closed' }>
             <Children className="navbar__list-item">Home</Children>
-            <Children className="navbar__list-item">About myself</Children>
+            <Children className="navbar__list-item">About me</Children>
             <Children className="navbar__list-item">Experience</Children>
             <Children className="navbar__list-item">Portfolio</Children>
           </Sidebar>

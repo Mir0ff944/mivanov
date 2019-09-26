@@ -9,10 +9,6 @@ const Logo = posed.div({
         duration: 1300,
         ease: 'easeIn'
       }
-        // type: 'keyframes',
-        // values: [0,1,0,1],
-        // times: [0, 0.33, 0.66, 1],
-        // duration: 7000,
     }
   },
   closed: {
@@ -33,10 +29,6 @@ export default class Home extends React.Component {
     setTimeout(this.toggleLogo, 1500)
     setTimeout(this.toggleLogo, 2900)
     setTimeout(this.toggleLogo, 4000)
-    // setTimeout(this.toggleLogo, 3500)
-    // setInterval(() => {
-    //   this.toggleLogo()
-    // }, 2000);
   }
 
   render() {
