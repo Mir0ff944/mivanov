@@ -37,6 +37,9 @@ export default class Naigation extends React.Component {
     return(
       <div>
         <div className="navbar__wrapper">
+          <div className="navbar-logo__wrapper">
+            <img src="placeholder.png" alt="placeholder" className="home-logo-image" />
+            </div>
           <Sidebar className="navbar__list" pose={isOpen ? 'open' : 'closed' }>
             <Children className="navbar__list-item">Home</Children>
             <Children className="navbar__list-item">About me</Children>
