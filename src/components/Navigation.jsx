@@ -17,8 +17,11 @@ const Sidebar = posed.ul({
 })
 
 const Children = posed.li({
+  hoverable: true,
   open: { y: 0, opacity: 1, },
-  closed: { y: 20, opacity: 0 }
+  closed: { y: 20, opacity: 0 },
+  init: { scale: 1 },
+  hover: { scale: 1.05 }
 })
 // end of Pose items
 
@@ -38,13 +41,24 @@ export default class Naigation extends React.Component {
       <div>
         <div className="navbar__wrapper">
           <div className="navbar-logo__wrapper">
-            <img src="placeholder.png" alt="placeholder" className="home-logo-image" />
+            <p className="navbar__name">
+              <i>M. Ivanov</i>
+            </p>
+            {/* <img src="placeholder.png" alt="placeholder" className="home-logo-image" /> */}
             </div>
           <Sidebar className="navbar__list" pose={isOpen ? 'open' : 'closed' }>
-            <Children className="navbar__list-item">Home</Children>
-            <Children className="navbar__list-item">About me</Children>
-            <Children className="navbar__list-item">Experience</Children>
-            <Children className="navbar__list-item">Portfolio</Children>
+            <Children className="navbar__list-item">
+              <a href="#home">Home</a>
+            </Children>
+            <Children className="navbar__list-item">
+              <a href="#about">About me</a>
+            </Children>
+            <Children className="navbar__list-item">
+              <a href="#experience">Experience</a>
+            </Children>
+            <Children className="navbar__list-item">
+              <a href="#portfolio">Portfolio</a>
+            </Children>
           </Sidebar>
         </div>
         <div className="main-content">

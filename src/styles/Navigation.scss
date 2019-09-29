@@ -1,4 +1,5 @@
 @import './Settings.scss';
+@import url('https://fonts.googleapis.com/css?family=Turret+Road:700&display=swap');
 
 .navbar {
   &__wrapper {
@@ -8,6 +9,7 @@
     padding-left: 15px;
     float: left;
     padding: 5px;
+    z-index: 1;
   }
 
   &__list {
@@ -21,18 +23,24 @@
       margin: 7px 0px 7px 0px;
       border-radius: 7px;
       text-align: center;
+      font-family: 'Turret Road', cursive;
 
       a {
-        font-weight: 500;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: beige;
+        color: black;
+        display: block;
+        text-decoration: none;
       }
     }
   }
 
   &-logo__wrapper {
     padding: 10px;
-    margin-bottom: 15px;
+  }
+
+  &__name {
+    font-family: 'Turret Road', cursive;
+    color: white;
+    font-size: 2.8rem;
   }
 }
 
