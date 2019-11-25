@@ -35,12 +35,16 @@
 
   &-logo__wrapper {
     padding: 10px;
+    margin: 0px 10px 0px 10px;
+    background-color: rgb(22, 22, 22);
+    // background-color: aqua;
+    border-radius: 15px;
   }
 
   &__name {
     font-family: 'Turret Road', cursive;
     color: white;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 }
 
