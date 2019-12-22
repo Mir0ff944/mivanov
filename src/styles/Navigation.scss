@@ -1,5 +1,6 @@
 @import './Settings.scss';
 @import url('https://fonts.googleapis.com/css?family=Turret+Road:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 .navbar {
   &__wrapper {
@@ -23,7 +24,7 @@
       margin: 7px 0px 7px 0px;
       border-radius: 7px;
       text-align: center;
-      font-family: 'Turret Road', cursive;
+      font-family: 'Source Code Pro', monospace;
 
       a {
         color: black;
@@ -42,9 +43,9 @@
   }
 
   &__name {
-    font-family: 'Turret Road', cursive;
+    font-family: 'Source Code Pro', monospace;
     color: white;
-    font-size: 2.6rem;
+    font-size: 2.1rem;
   }
 }
 
